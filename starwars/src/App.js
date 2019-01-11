@@ -25,6 +25,7 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
+        console.log(data);
         this.setState({
           starwarsChars: data.results,
           nextUrl: data.next,
@@ -38,7 +39,11 @@ class App extends Component {
 
   handleNext = event => {
     console.log(event);
-    this.setState({ nextUrl: this.state.nextUrl });
+    this.getCharacters(this.state.nextUrl);
+  };
+
+  handlePrevious = event => {
+    this.getCharacters(this.state.previousUrl);
   };
 
   render() {
@@ -46,7 +51,7 @@ class App extends Component {
       <div className="App">
         <h1 className="Header">Star Wars Characters</h1>
         <div className="Buttons">
-          <button>Previous</button>
+          <button onClick={this.handlePrevious}>Previous</button>
           <button onClick={this.handleNext}> Next</button>
         </div>
         <div>
