@@ -80,5 +80,22 @@ table {
 .charList {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 60px;
+}
+
+.Buttons {
+  padding-top: 40px;
+  margin-right: 20px;
+}
+button {
+  padding: 10px;
+  font-size: 20px;
+  margin-left: 20px;
+  width: 100px;
+  border-radius: 5px;
+}
+button:hover {
+  color: white;
+  background-color: black;
 }

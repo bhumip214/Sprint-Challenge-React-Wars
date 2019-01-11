@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import Character from "./Character";
 
 function CharacterList(props) {
   return (
     <div className="charList">
-      {props.starwarsChars.map(character => {
-        return <Character character={character} />;
+      {props.starwarsChars.map((character, index) => {
+        return <Character character={character} key={index} />;
       })}
     </div>
   );
