@@ -25,7 +25,6 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        console.log(data);
         this.setState({
           starwarsChars: data.results,
           nextUrl: data.next,
@@ -38,12 +37,13 @@ class App extends Component {
   };
 
   handleNext = event => {
-    console.log(event);
     this.getCharacters(this.state.nextUrl);
   };
 
   handlePrevious = event => {
-    this.getCharacters(this.state.previousUrl);
+    if (this.state.previousUrl !== null) {
+      return this.getCharacters(this.state.previousUrl);
+    }
   };
 
   render() {
