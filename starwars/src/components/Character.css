@@ -3,14 +3,18 @@
   margin: 20px;
   width: 300px;
 }
+.charData:hover {
+  border: 2px solid white;
+  box-shadow: 1;
+}
 
 .charName {
-  background: rgb(90, 17, 17);
+  background-color: rgb(90, 17, 17);
   color: white;
   padding: 8px;
 }
 
 h3 {
   font-size: 20px;
-  color: white;
+  color: black;
 }
